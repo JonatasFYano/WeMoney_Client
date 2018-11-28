@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>WeMoney</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/webRTCstyle/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+    <script src="app/assets/js/modernizr.custom.js"></script>
+	<link rel="stylesheet" type="text/css" href="../assets/css/webRTCstyle/stylesheets/normalize.css" />
+	<style>
+		#vid-box{
+			display: inline-block;
+			text-align:center;
+			width:100%;
+		}
+		#vid-box video{
+			width:47%;
+		}
+	</style>	
+</head>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="#">We Money</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav" style="display: inline-block!important">
+				  <ul class="navbar-nav">
+					<li class="nav-item active">
+					  <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					  <a [routerLink]="['/mySession']" class="nav-link">My Sessions</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" [routerLink]="['/newCourse']">New Course</a>
+					  </li>
+				  </ul>
+				</div>
+			  </nav>
+			  
+			  <div *ngIf="!show">
+
+				<div class="card text-center">
+					<div class="card-header">
+						<h4>Future Sessions</h4>
+					</div>		  
+					<div class="card-body">
+					  <div class="row">
+						<div class="col-md-3">
+							<div class="card">
+								<img class="card-img-top" src="app/assets/images/trump.jpg" alt="Card image cap" height="150px">
+								<div class="card-header">Save $$$ with a bit of planning</div>
+								<div class="card-body">
+									<p class="card-text">Carlos Sousa</p>
+									<button class="btn btn-info" (click)="toggle()">Get in the room</button> 
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="card">
+								<img class="card-img-top" src="app/assets/images/investimento.jpg" alt="Card image cap" height="150px">
+								<div class="card-header">Investments 101</div>								
+								<div class="card-body">
+								<p class="card-text">João Pedro Gonçalves</p>
+								<button class="btn btn-info" (click)="toggle()">Get in the room</button> 
+								</div>
+							</div>
+						</div>
+					</div>
+				  </div>
+				</div>
+				<div class="card text-center">
+						<div class="card-header">
+							<h4>Past Sessions</h4>
+						</div>		  
+						<div class="card-body">
+						  <div class="row">
+							<div class="col-md-3">
+								<div class="card">
+									<img class="card-img-top" src="app/assets/images/investimento.jpg" alt="Card image cap" height="150px">
+									<div class="card-header">Save $$$ with a bit of planning</div>
+									<div class="card-body">
+										<p class="card-text">Carlos Sousa</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					  </div>
+					</div>
+					<div class="footer-copyright text-center py-3">2018 WeMoney</div>					
+			</div>
+
+
+	<div *ngIf="show">
+
+	<div class = "bodyDiv">
+		
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- My Phone Number & Dial Areas -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+	<div id="vid-box" class="video2"></div>
+	<div id="vid-thumb"></div>
+
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-md-8 ml-auto mr-auto">
+				<div class="card">
+						<div class="card-header">
+								<i class="material-icons" style="font-size:48px;">
+										event
+								</i>
+								<h4>Identify yourself, make a call and wait until the other person is ready!</h4>
+						</div>					
+						<div class="card-body">
+								<span class="input input--nao">
+										<input class="input__field input__field--nao" type="text" [(ngModel)]='username' id="username" placeholder="Username here"/>
+											<label class="input__label input__label--nao" for="username">
+												<span class="input__label-content input__label-content--nao">                                          
+												</span>
+											</label>
+											<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+												<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+											</svg>
+									</span>
+									<button class="btn btn-info"  onclick="login(username)" type="submit" style="margin-top: 30px; margin-left:-10px">
+										I'm ready
+									</button>
+								<button class="btn btn-info" onclick="makeCall('jonatasbatata')" style="margin-top: 30px;">
+									Call Professor
+								</button>
+						</div>
+						<div class="card-footer text-muted">
+								<p>If they did not show up, click here.</p>
+						</div>
+					</div>
+		</div>
+	</div>
+</div>
+
+	<div id="logs" class="ptext"></div>
+</div>
+<div class="footer-copyright text-center py-3">2018 WeMoney</div>
+
+
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+<!-- WebRTC Peer Connections -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+<script src="app/assets/js/webrtc.js"></script>
+<script src="app/assets/js/rtc-controller.js"></script>
+
+<script type="text/javascript">
+
+function myFunction() {
+   var element = document.getElementById("teste");
+   element.classList.remove("d-none");
+   return;
+}
+    
+function login(form) {
+	var phone = window.phone = PHONE({
+	    number        : "jonatasyano" || "Anonymous", // listen on username line else Anonymous
+	    publish_key   : 'pub-c-561a7378-fa06-4c50-a331-5c0056d0163c', // Your Pub Key
+	    subscribe_key : 'sub-c-17b7db8a-3915-11e4-9868-02ee2ddab7fe', // Your Sub Key
+	});
+	var ctrl = window.ctrl = CONTROLLER(phone);
+	ctrl.ready(function(){
+		ctrl.addLocalStream(vid_thumb);
+		addLog("Logged in as " + "jonatasyano"); 
+	});
+	ctrl.receive(function(session){
+	    session.connected(function(session){ video_out.appendChild(session.video); addLog(session.number + " has joined."); vidCount++; });
+	    session.ended(function(session) { ctrl.getVideoElement(session.number).remove(); addLog(session.number + " has left.");    vidCount--;});
+	});
+	ctrl.videoToggled(function(session, isEnabled){
+		ctrl.getVideoElement(session.number).toggle(isEnabled);
+		addLog(session.number+": video enabled - " + isEnabled);
+	});
+	ctrl.audioToggled(function(session, isEnabled){
+		ctrl.getVideoElement(session.number).css("opacity",isEnabled ? 1 : 0.75);
+		addLog(session.number+": audio enabled - " + isEnabled);
+	});
+	return false;
+}
+
+function makeCall(formamamama){
+	if (!window.phone) alert("Login First!");
+	var num = "form.number.value";
+	if (phone.number()==num) return false; // No calling yourself!
+	ctrl.isOnline(num, function(isOn){
+		if (isOn) ctrl.dial(num);
+		else alert("User if Offline");
+	});
+	return false;
+}
+
+function mute(){
+	var audio = ctrl.toggleAudio();
+	if (!audio) $("#mute").html("Unmute");
+	else $("#mute").html("Mute");
+}
+
+function end(){
+	ctrl.hangup();
+}
+
+function pause(){
+	var video = ctrl.toggleVideo();
+	if (!video) $('#pause').html('Unpause'); 
+	else $('#pause').html('Pause'); 
+}
+
+function getVideo(number){
+	return $('*[data-number="'+number+'"]');
+}
+
+function addLog(log){
+	$('#logs').append("<p>"+log+"</p>");
+}
+
+
+
+</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+		Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-46933211-3', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+</div>
+</html>
