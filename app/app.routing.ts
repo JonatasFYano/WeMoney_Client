@@ -6,7 +6,7 @@ import { RegisterComponent } from './register/index';
 import { AuthGuard } from './_guards/index';
 import { MySessionComponent } from './mySession/mySession.component';
 import { ProfileComponent } from './profile/profile.component';
-import { NewCourseComponent } from './newCourse/newCourse.component';
+import { SearchCourseComponent } from './searchCourse/searchCourse.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -15,7 +15,7 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'mySession', component: MySessionComponent },
     { path: 'profile', component: ProfileComponent },
-    { path: 'newCourse', component: NewCourseComponent },
+    { path: 'searchCourse', component: SearchCourseComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

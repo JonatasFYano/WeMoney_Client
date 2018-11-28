@@ -15,7 +15,7 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { MySessionComponent } from './mySession/mySession.component';
 import { ProfileComponent } from './profile/profile.component';
-import { NewCourseComponent } from './newCourse/newCourse.component';
+import { SearchCourseComponent } from './searchCourse/searchCourse.component';
 
 @NgModule({
     imports: [
@@ -33,7 +33,7 @@ import { NewCourseComponent } from './newCourse/newCourse.component';
         LoginComponent,
         RegisterComponent,
         ProfileComponent,
-        NewCourseComponent
+        SearchCourseComponent
     ],
     providers: [
         AuthGuard,

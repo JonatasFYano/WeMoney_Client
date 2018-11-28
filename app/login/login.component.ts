@@ -10,6 +10,7 @@ import { AlertService, AuthenticationService } from '../_services/index';
 
 export class LoginComponent implements OnInit {
     model: any = {};
+    modelCli: any = {};
     loading = false;
     returnUrl: string;
 
@@ -27,9 +28,10 @@ export class LoginComponent implements OnInit {
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
-    login() {
+    loginClient() {
+        console.log("Entoru")
         this.loading = true;
-        this.authenticationService.login(this.model.username, this.model.password)
+            this.authenticationService.login(this.modelCli.username, this.modelCli.password)
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
@@ -38,5 +40,21 @@ export class LoginComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+
+    }
+
+    loginProf() {
+        console.log("Entoru")
+        this.loading = true;
+            this.authenticationService.login(this.model.usernameProf, this.model.passwordProf)
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.alertService.error(error);
+                    this.loading = false;
+                });
+
     }
 }

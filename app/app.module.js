@@ -21,7 +21,7 @@ var index_6 = require("./login/index");
 var index_7 = require("./register/index");
 var mySession_component_1 = require("./mySession/mySession.component");
 var profile_component_1 = require("./profile/profile.component");
-var newCourse_component_1 = require("./newCourse/newCourse.component");
+var searchCourse_component_1 = require("./searchCourse/searchCourse.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -42,7 +42,7 @@ var AppModule = /** @class */ (function () {
                 index_6.LoginComponent,
                 index_7.RegisterComponent,
                 profile_component_1.ProfileComponent,
-                newCourse_component_1.NewCourseComponent
+                searchCourse_component_1.SearchCourseComponent
             ],
             providers: [
                 index_2.AuthGuard,

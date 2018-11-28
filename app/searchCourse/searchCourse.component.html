@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">We Money</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/mySession']" class="nav-link">My Sessions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/newCourse']">Search Course</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+ <div class="row ml-auto mr-auto align-middle mt-5">
+  <div class="container" style="border:1px solid #cecece; border-radius:10px;">	
+<div class="col-md-11 text-center">
+<span class="col-md-5 ml-5 d-inline-block">
+                <h2>Crie um novo curso</h2>
+                <input [(ngModel)] = "searchTerm" (ngModelChange) = "search()" class="form-control"/>
+                    <div *ngFor = "let item of items">{{item.name}}</div>
+                </span>
+                    <div class="card text-center">		  
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-4" *ngFor = "let item of items">
+                                <div class="card">
+                                    <img class="card-img-top" src="app/assets/images/bitcoin.jpg" alt="Card image cap" height="180px">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{item.titulo}}</h5>
+                                      <p class="card-text">{{item.detalhe}}</p>
+                                      <p class="card-text">Prof. {{item.professor}}</p>
+                                      <p class="card-text"><small class="text-muted">Check this out</small></p>
+                                    </div>
+                                  </div>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="app/assets/images/bitcoin.jpg" alt="Card image cap" height="180px">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Bitcoin for what you need!</h5>
+                                      <p class="card-text">Specialists that can talk about this topic from scratch!.</p>
+                                      <p class="card-text"><small class="text-muted">Check this out</small></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                  <div class="col-md-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="app/assets/images/bitcoin.jpg" alt="Card image cap" height="180px">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Bitcoin for what you need!</h5>
+                                          <p class="card-text">Specialists that can talk about this topic from scratch!.</p>
+                                          <p class="card-text"><small class="text-muted">Check this out</small></p>
+                                        </div>
+                                      </div>
+                                </div> -->
+                        </div>
+                      </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>

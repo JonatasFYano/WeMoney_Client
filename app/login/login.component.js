@@ -19,6 +19,7 @@ var LoginComponent = /** @class */ (function () {
         this.authenticationService = authenticationService;
         this.alertService = alertService;
         this.model = {};
+        this.modelCli = {};
         this.loading = false;
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -27,10 +28,23 @@ var LoginComponent = /** @class */ (function () {
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     };
-    LoginComponent.prototype.login = function () {
+    LoginComponent.prototype.loginClient = function () {
         var _this = this;
+        console.log("Entoru");
         this.loading = true;
-        this.authenticationService.login(this.model.username, this.model.password)
+        this.authenticationService.login(this.modelCli.username, this.modelCli.password)
+            .subscribe(function (data) {
+            _this.router.navigate([_this.returnUrl]);
+        }, function (error) {
+            _this.alertService.error(error);
+            _this.loading = false;
+        });
+    };
+    LoginComponent.prototype.loginProf = function () {
+        var _this = this;
+        console.log("Entoru");
+        this.loading = true;
+        this.authenticationService.login(this.model.usernameProf, this.model.passwordProf)
             .subscribe(function (data) {
             _this.router.navigate([_this.returnUrl]);
         }, function (error) {
